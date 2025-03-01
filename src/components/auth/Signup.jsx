@@ -23,7 +23,7 @@ function SignUp() {
   });
   async function submitForm(user) {
     try {
-      const response = await client.post("/auth/local/register", user);
+      const response = await client.post("/api/user/signup", user);
       console.log(response.data.jwt);
       localStorage.setItem("token", response.data.jwt);
       toast.success("user added successfully", {
