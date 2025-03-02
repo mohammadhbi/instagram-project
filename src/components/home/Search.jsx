@@ -28,8 +28,9 @@ const Search = () => {
       } else {
         setError("error");
       }
-    } catch (err) {
+    } catch (error) {
       setError("try again");
+      console.log(error)
     } finally {
       setLoading(false);
     }
@@ -57,7 +58,7 @@ const Search = () => {
         className="focus:outline-none flex items-center mb-3"
       >
         <img className="hover:border hover:rounded-full hover:border-[#ccc] hover:p-2 p-2"  src="public/Frame (1).png" alt="" />
-        <span class="ml-2 text-gray-600 hover:text-black">Search</span>
+        <span className="ml-2 text-gray-600 hover:text-black">Search</span>
       </button>
       {isOpen && (
         <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-0 ml-10 border border-[#DBDBDB]">

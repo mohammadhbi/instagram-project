@@ -84,7 +84,7 @@ function SignUp() {
 
         <div className="flex font-light mt-3">
           <p className="mr-2">Already have an account?</p>
-          {/* <Link> <span className='text-[#44B8FA]'>Login</span> </Link> */}
+           {/* <Link to="/login"> <span className='text-[#44B8FA]'>Login</span> </Link>  */}
         </div>
       </form>
     </div>
