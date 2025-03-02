@@ -4,9 +4,11 @@ import * as yup from "yup";
 import React, { useState } from "react";
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
-// import { Link } from 'react-router-dom'
-import Logo from '../../assets/Logo.png'
+import { Link } from "react-router-dom";
+import Logo from "../../assets/Logo.png";
+import { useNavigate } from "react-router-dom";
 function SignUp() {
+  const navigate = useNavigate();
   const schema = yup.object({
     email: yup.string().required().email(),
     username: yup.string().required(),
@@ -23,12 +25,13 @@ function SignUp() {
   });
   async function submitForm(user) {
     try {
+      console.log(user);
       const response = await client.post("/api/user/signup", user);
-      console.log(response.data.jwt);
-      localStorage.setItem("token", response.data.jwt);
       toast.success("user added successfully", {
         type: "success",
       });
+      console.log(response);
+      navigate("/Login");
     } catch (error) {
       toast.error(error.message, {
         type: "error",
@@ -39,14 +42,11 @@ function SignUp() {
     setIsShowPassword(!isShowPassword);
   }
   return (
-    <div className="grid justify-center mt-36">
+    <div className=" grid mx-auto py-10 justify-center mt-36 border border-gray-300 rounded-md w-140 ">
       <div>
-         <img className='mb-9' src={Logo} alt="" /> </div>
-      <form
-        className="grid grid-cols-1"
-        onSubmit={handleSubmit(submitForm)}
-        action=""
-      >
+        <img className="mb-9 mx-auto" src={Logo} alt="" />{" "}
+      </div>
+      <form className="grid grid-cols-1  " onSubmit={handleSubmit(submitForm)}>
         <label className="input mb-3 w-96">
           <input
             {...register("email")}
@@ -72,17 +72,27 @@ function SignUp() {
             className="grow"
             placeholder="Password"
           />
-          <span onClick={toggleShowPassword} className="badge badge-xs text-[#8A8888]">Show</span>
+          <span
+            onClick={toggleShowPassword}
+            className="badge badge-xs text-[#8A8888]"
+          >
+            Show
+          </span>
         </label>
         {errors?.password ? <span>{errors.password.message}</span> : null}
 
-        <button className="bg-[#44B8FA] rounded-2xl border-none outline-0 w-96 h-10 text-white mt-6">
+        <button
+          type="submit"
+          className="bg-[#44B8FA] rounded-2xl border-none outline-0 w-96 h-10 text-white mt-6"
+        >
           Sign up
         </button>
 
         <div className="flex font-light mt-3">
           <p className="mr-2">Already have an account?</p>
-          {/* <Link> <span className='text-[#44B8FA]'>Login</span> </Link> */}
+          <Link to="/login" className="text-blue-500 text-sm font-semibold">
+            Login
+          </Link>
         </div>
       </form>
     </div>
