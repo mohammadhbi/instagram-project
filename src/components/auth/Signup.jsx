@@ -90,13 +90,9 @@ function SignUp() {
 
         <div className="flex font-light mt-3">
           <p className="mr-2">Already have an account?</p>
-<<<<<<< HEAD
-           {/* <Link to="/login"> <span className='text-[#44B8FA]'>Login</span> </Link>  */}
-=======
           <Link to="/login" className="text-blue-500 text-sm font-semibold">
             Login
           </Link>
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
         </div>
       </form>
     </div>

@@ -1,23 +1,10 @@
 import React from "react";
 import Logo from "../../assets/Logo.png";
-<<<<<<< HEAD
-// import { Link } from 'react-router-dom';
-=======
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { client } from "../../lib/axios";
 import { toast } from "react-toastify";
-<<<<<<< HEAD
-
-function Login() {
-  const schema = yup.object({
-    email: yup.string().required().email(),
-    username: yup.string().required(),
-    password: yup.string().required().min(8).max(16),
-  });
-=======
 import { Link, useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
@@ -27,7 +14,6 @@ function Login() {
     password: yup.string().required().min(8).max(16),
   });
 
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
   const {
     register,
     handleSubmit,
@@ -39,12 +25,6 @@ function Login() {
   async function submitForm(user) {
     try {
       const response = await client.post("/api/user/login", user);
-<<<<<<< HEAD
-      console.log(response.data);
-      toast.success("user logged in successfully", {
-        type: "success",
-      });
-=======
       console.log("called", response.data.data.username);
       localStorage.setItem("token", response.data.accessToken);
       // localStorage.setItem("token", response.data.data.username);
@@ -54,7 +34,6 @@ function Login() {
         type: "success",
       });
       navigate("/home");
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
     } catch (error) {
       toast.error(error.message, {
         type: "error",
@@ -91,26 +70,19 @@ function Login() {
         </label>
         {errors?.password ? <span>{errors.password.message}</span> : null}
 
-<<<<<<< HEAD
-        <button className="bg-[#44B8FA] rounded-2xl border-none outline-0 w-96 h-10 text-white mt-6">
-=======
         <button
           type="submit"
           className="bg-[#44B8FA] rounded-2xl border-none outline-0 w-96 h-10 text-white mt-6"
         >
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
           Log in
         </button>
 
         <div className="flex font-light mt-3">
           <p className="mr-2">Don’t have an account?</p>
-<<<<<<< HEAD
-          {/* <Link> <span className='text-[#44B8FA]'>Log in</span> </Link> */}
-=======
+
           <Link to="/" className="text-blue-500 text-sm font-semibold">
             signup
           </Link>
->>>>>>> 9661d28b5114eef690ef4fde9a916869e84e4c05
         </div>
       </form>
     </div>

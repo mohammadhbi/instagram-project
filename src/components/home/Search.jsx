@@ -30,7 +30,7 @@ const Search = () => {
       }
     } catch (error) {
       setError("try again");
-      console.log(error)
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -57,12 +57,18 @@ const Search = () => {
         onClick={toggleSearch}
         className="focus:outline-none flex items-center mb-3"
       >
-        <img className="hover:border hover:rounded-full hover:border-[#ccc] hover:p-2 p-2"  src="public/Frame (1).png" alt="" />
+        <img
+          className="hover:border hover:rounded-full hover:border-[#ccc] hover:p-2 p-2"
+          src="public/Frame (1).png"
+          alt=""
+        />
         <span className="ml-2 text-gray-600 hover:text-black">Search</span>
       </button>
       {isOpen && (
         <div className="absolute w-[350px] bg-white shadow-lg rounded-lg p-4 z-10 top-0 ml-10 border border-[#DBDBDB]">
-          <h2 className="mb-[37px] text-[#262626] font-semibold text-[23px]">Search</h2>
+          <h2 className="mb-[37px] text-[#262626] font-semibold text-[23px]">
+            Search
+          </h2>
           <input
             type="text"
             placeholder="search"
@@ -77,13 +83,13 @@ const Search = () => {
           )}
           <div className="justify-between items-center mb-2 border-t border-[#DBDBDB] mt-[25px]">
             <div className="mt-[18px] flex justify-between items-center">
-            <span className="font-medium">Recent</span>
-            <button
-              onClick={clearRecentItems}
-              className="text-blue-500 text-sm"
-            >
-              Clear all
-            </button>
+              <span className="font-medium">Recent</span>
+              <button
+                onClick={clearRecentItems}
+                className="text-blue-500 text-sm"
+              >
+                Clear all
+              </button>
             </div>
           </div>
           <div className="space-y-2">
