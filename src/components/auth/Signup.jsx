@@ -39,7 +39,7 @@ function SignUp() {
     setIsShowPassword(!isShowPassword);
   }
   return (
-    <div className="grid justify-center mt-36">
+    <div className=" grid justify-center mt-36">
       <div>
          <img className='mb-9' src={Logo} alt="" /> </div>
       <form

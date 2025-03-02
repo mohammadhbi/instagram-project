@@ -1,11 +1,11 @@
 import React from 'react'
-import Logo from '../assets/images/Frame 20.png'
-import HomeLogo from '../assets/images/Frame.png' 
-import plusLogo from '../assets/images/Frame (2).png'
-import searchIcon from '../assets/images/Frame (1).png'
-import profile from '../assets/images/Rectangle.png'
-import ProfileName from './profileName'
-import Post from './post'
+// import Logo from '../assets/images/Frame 20.png'
+// import HomeLogo from '../assets/images/Frame.png' 
+// import plusLogo from '../assets/images/Frame (2).png'
+// import searchIcon from '../assets/images/Frame (1).png'
+// import profile from '../assets/images/Rectangle.png'
+// import ProfileName from './profileName'
+// import Post from './post'
 function SideBar() {
     return (
         <div>
