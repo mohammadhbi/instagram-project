@@ -1,11 +1,14 @@
-import React from 'react'
-import SideBar from './sidebar'
+import React from "react";
+import SideBar from "./sidebar";
+import Search from "./Search";
+
 function Layout() {
   return (
-    <div>
-      {/* <SideBar/> */}
+    <div className="flex">
+      <SideBar />
+      <Search />
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

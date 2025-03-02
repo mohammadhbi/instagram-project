@@ -39,13 +39,15 @@ function SignUp() {
     setIsShowPassword(!isShowPassword);
   }
   return (
-    <div className=" grid justify-center mt-36">
+
+    <div className=" grid mx-auto py-10 justify-center mt-36 border border-gray-300 rounded-md w-140 ">
       <div>
-         <img className='mb-9' src={Logo} alt="" /> </div>
+         <img className='mb-9 mx-auto' src={Logo} alt="" /> </div>
       <form
-        className="grid grid-cols-1"
+        className="grid grid-cols-1  "
         onSubmit={handleSubmit(submitForm)}
         action=""
+
       >
         <label className="input mb-3 w-96">
           <input
