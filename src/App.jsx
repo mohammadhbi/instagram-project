@@ -6,6 +6,7 @@ import Layout from "./components/home/layout"
 function App() {
   return (
     <BrowserRouter>
+    
     <Routes>
       <Route path="/" element={<SignUp />}/>
       <Route path="/login" element={<Login />}/>
